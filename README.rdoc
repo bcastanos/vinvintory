@@ -1,7 +1,6 @@
-== README
+## README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Vinvintory is a web app designed to allow users to easily manage their wine collections online and have the ability to easily share their collections with associates and friends.
 
 Things you may want to cover:
 
