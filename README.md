@@ -2,6 +2,19 @@
 
 Vinvintory is a web app designed to allow users to easily manage their wine collections online and have the ability to easily share their collections with associates and friends.
 
+![alt tag](http://imgur.com/IpmJfVz)
+![alt tag](http://imgur.com/ibTmFLu)
+![alt tag](http://imgur.com/IQSB9UI)
+![alt tag](http://imgur.com/xuwtFAn)
+
+
+
+
+
+
+
+
+
 Things you may want to cover:
 
 * Ruby version
