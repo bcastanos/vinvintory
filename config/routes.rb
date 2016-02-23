@@ -4,7 +4,7 @@ Rails.application.routes.draw do
     resources :sessions, only: [:new, :create]
 
   # root 'welcome#index'
-
+  root 'users#index'
   get 'users' => 'users#index'
   get 'users/new' => 'users#new', as: :new_user
   get 'users/:id' => 'users#show', as: :user
