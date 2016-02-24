@@ -1,13 +1,13 @@
 class UsersController < ApplicationController
 
-  before_action :authorize, only: [:show]
+  # before_action :authorize, only: [:show]
 
   def index
     @users = User.all
   end
 
   def show
-    @users = User.find(params[:id])
+    @user = User.find(params[:id])
   end
 
   def new
@@ -17,7 +17,11 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      redirect_to user_path(:id, user)
+      log_in @user
+      flash[:success] = "Welcome to vInventory!"
+      redirect_to @user
+    else
+      render 'new'
     end
   end
 

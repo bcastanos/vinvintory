@@ -18,26 +18,27 @@
  @import "bootstrap-sprockets";
  @import "bootstrap";
 
+
  body {
    padding-top: 50px;
  }
-
- section {
-   overflow: auto;
- }
-
- textarea {
-   resize: vertical;
- }
-
- .center {
-   text-align: center;
- }
-
- .center h1 {
-   margin-bottom: 10px;
- }
-
+ //
+ // section {
+ //   overflow: auto;
+ // }
+ //
+ // textarea {
+ //   resize: vertical;
+ // }
+ //
+ // .center {
+ //   text-align: center;
+ // }
+ //
+ // .center h1 {
+ //   margin-bottom: 10px;
+ // }
+ //
  html {
 background: url(http://i.imgur.com/emxeIbg.jpg) no-repeat center center fixed;
 -webkit-background-size: cover;
