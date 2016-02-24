@@ -18,27 +18,21 @@
  @import "bootstrap-sprockets";
  @import "bootstrap";
 
+.logo {
+  font-family: 'Merriweather', serif;
+  font-size: 44px;
+  color: #30122d;
+}
+
+.links {
+  font-size: 36px;
+}
 
  body {
    padding-top: 50px;
+   font-family: 'Merriweather', serif;
  }
- //
- // section {
- //   overflow: auto;
- // }
- //
- // textarea {
- //   resize: vertical;
- // }
- //
- // .center {
- //   text-align: center;
- // }
- //
- // .center h1 {
- //   margin-bottom: 10px;
- // }
- //
+
  html {
 background: url(http://i.imgur.com/emxeIbg.jpg) no-repeat center center fixed;
 -webkit-background-size: cover;
