@@ -1,0 +1,29 @@
+<h1>ADD A NEW BOTTLE</h1>
+
+<%= form_for @bottle do |f| %>
+
+<div>
+  <%= f.label :qty %>
+  <%= f.number_field :qty %>
+</div>
+
+<div>
+  <%= f.label :vintage %>
+  <%= f.number_field :vintage %>
+</div>
+
+<div>
+  <%= f.label :wine %>
+  <%= f.text_field :wine %>
+</div>
+
+<div>
+  <%= f.label :price %>
+  <%= f.number_field :price %>
+</div>
+
+<%= f.submit 'ADD TO YOUR CELLAR' %>
+
+<% end %>
+
+<%= link_to 'BACK TO YOUR CELLAR', users_path %>

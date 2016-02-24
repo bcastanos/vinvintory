@@ -1,0 +1,21 @@
+<h1>Bottles</h1>
+<table class="table table-bordered table-striped">
+  <thead>
+    <tr>
+      <th><%= sort_link "qty" %></th>
+      <th><%= sort_link "vintage" %></th>
+      <th><%= sort_link "wine" %></th>
+      <th><%= sort_link "price" %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @bottles.each do |bottle| %>
+      <tr>
+        <td><%= bottle.qty %></td>
+        <td><%= bottle.vintage %></td>
+        <td><%= bottle.wine %></td>
+        <td><%= number_to_currency bottle.price %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

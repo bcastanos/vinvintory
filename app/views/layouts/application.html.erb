@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <title>Vinvintory</title>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
@@ -7,12 +8,25 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
+
+
 <body>
-  <% if logged_in? %>
-      <%= link_to "Logout", logout_path %>
-  <% else %>
-      <%= link_to "Login", new_session_path %>
-  <% end %>
+  <header class="navbar navbar-fixed-top navbar-inverse">
+  <div class="container">
+    <nav>
+      <ul class="nav navbar-nav navbar-right">
+        <li><%= link_to "Home",   root_path %></li>
+        <li><%= link_to "Sign Up", new_user_path %></li>
+        <li><%= link_to "Log in", '#' %></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<div class="container">
+  <%= yield %>
+</div>
+
 
   <% if flash[:success] %>
   <div class="alert alert-success"><%= flash[:success] %></div>
@@ -21,7 +35,8 @@
   <% end %>
   <script>$('.alert').delay(2000).slideUp()</script>
 
-<%= yield %>
+
+
 
 </body>
 </html>
