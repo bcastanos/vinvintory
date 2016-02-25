@@ -1,37 +1,36 @@
 <% provide(:title, @user.name) %>
 
-<h1 class="text-center"> <%= @user.name %>'s Cellar </h1>
+<div class="container bgwhite">
+  <h1 class="text-center"> <%= @user.name %>'s Cellar </h1>
 
-<table class="table table-bordered table-hover">
-  <thead class="bgwhite">
-    <tr>
-      <th><%= sort_link "qty" %></th>
-      <th><%= sort_link "vintage" %></th>
-      <th><%= sort_link "wine" %></th>
-      <th><%= sort_link "price" %></th>
-      <th><%= sort_link "value" %></th>
-      <th>Photo</th>
-      <th>Edit</th>
-      <th>Delete</th>
-
-    </tr>
-  </thead>
-  <tbody class="bgwhite">
+    <table class="table table-bordered table-hover">
+      <thead class="bgwhite">
+        <tr>
+          <th><%= sort_link "qty" %></th>
+          <th><%= sort_link "vintage" %></th>
+          <th><%= sort_link "wine" %></th>
+          <th><%= sort_link "price" %></th>
+          <th><%= sort_link "value" %></th>
+          <th>Photo</th>
+          <th>Edit</th>
+          <th>Delete</th>
+        </tr>
+      </thead>
+    <tbody class="bgwhite">
     <% @bottles.each do |bottle| %>
-      <tr>
-        <td><%= bottle.qty %></td>
-        <td><%= bottle.vintage %></td>
-        <td><%= bottle.wine %></td>
-        <td><%= number_to_currency bottle.price %></td>
-        <td><%= number_to_currency bottle.price * bottle.qty %></td>
-        <td></td>
-        <td><%= link_to "Edit", edit_bottle_path(bottle) %></td>
-        <td><%= link_to "Delete", bottle, method: :delete,
-                                       data: { confirm: "You sure?" } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+        <tr>
+          <td><%= bottle.qty %></td>
+          <td><%= bottle.vintage %></td>
+          <td><%= bottle.wine %></td>
+          <td><%= number_to_currency bottle.price %></td>
+          <td><%= number_to_currency bottle.price * bottle.qty %></td>
+          <td><%= bottle.avatar %></td>
+          <td><%= link_to "Edit", edit_bottle_path(bottle) %></td>
+          <td><%= link_to "Delete", bottle, method: :delete, data: {confirm: "You sure?" }%></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 
-
-<button class= "btn btn-success center-block"><%= link_to "NEW BOTTLE", new_bottle_path %></button>
+      <button class= "btn btn-success center-block"><%= link_to "NEW BOTTLE", new_bottle_path %></button>
+  </div>

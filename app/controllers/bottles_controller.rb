@@ -48,7 +48,7 @@ class BottlesController < ApplicationController
   private
 
   def bottles_params
-    params.require(:bottle).permit(:qty, :vintage, :wine, :price, :id)
+    params.require(:bottle).permit(:qty, :vintage, :wine, :price, :id, :avatar, :name)
   end
 
   def correct_user
