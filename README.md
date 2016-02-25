@@ -29,7 +29,8 @@ Vinventory is a web app designed to allow users to easily manage their wine coll
 ##User Stories
 
 | As a ... | I'd like to ... |
-|user|Login to my account to see my inventory.|
+| ---------|-----------------|
+|User|Login to my account to see my inventory.|
 
 ##Installation
 
