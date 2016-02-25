@@ -1,16 +1,10 @@
 <!DOCTYPE html>
-<html>
+<html class="background-style">
 
 <head>
   <title>vInventory</title>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
   <link href='https://fonts.googleapis.com/css?family=Merriweather:400,900' rel='stylesheet' type='text/css'>
-      <script type="text/javascript">
-            var http = require("http");
-            setInterval(function() {
-                http.get("http://vinventory.herokuapp.com");
-                }, 300000); // every 5 minutes (300000)
-      </script>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>

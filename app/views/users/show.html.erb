@@ -1,18 +1,9 @@
 <% provide(:title, @user.name) %>
-<div class="row">
-  <aside class="col-md-4">
-    <section class="user_info">
-      <h1>
-        <%= gravatar_for @user %>
-        <%= @user.name %>
-      </h1>
-    </section>
-  </aside>
-</div>
 
-<h1> <%= @user.name %>'s Cellar </h1>
-<table class="table table-bordered table-striped">
-  <thead>
+<h1 class="text-center"> <%= @user.name %>'s Cellar </h1>
+
+<table class="table table-bordered table-hover">
+  <thead class="bgwhite">
     <tr>
       <th><%= sort_link "qty" %></th>
       <th><%= sort_link "vintage" %></th>
@@ -22,9 +13,10 @@
       <th>Photo</th>
       <th>Edit</th>
       <th>Delete</th>
+
     </tr>
   </thead>
-  <tbody>
+  <tbody class="bgwhite">
     <% @bottles.each do |bottle| %>
       <tr>
         <td><%= bottle.qty %></td>
@@ -33,8 +25,8 @@
         <td><%= number_to_currency bottle.price %></td>
         <td><%= number_to_currency bottle.price * bottle.qty %></td>
         <td></td>
-        <td><%= link_to "E", edit_bottle_path(bottle) %></td>
-        <td><%= link_to "D", bottle, method: :delete,
+        <td><%= link_to "Edit", edit_bottle_path(bottle) %></td>
+        <td><%= link_to "Delete", bottle, method: :delete,
                                        data: { confirm: "You sure?" } %></td>
       </tr>
     <% end %>
@@ -42,4 +34,4 @@
 </table>
 
 
-<%= link_to 'ADD WINE TO YOUR CELLAR', new_bottle_path %>
+<button class= "btn btn-success center-block"><%= link_to "NEW BOTTLE", new_bottle_path %></button>

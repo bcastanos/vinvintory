@@ -33,7 +33,7 @@ class BottlesController < ApplicationController
   def update
     @bottle = Bottle.find(params[:id])
     if @bottle.update(bottles_params)
-      redirect_to users_path
+      redirect_to user_path(current_user)
     else
       render :edit
     end

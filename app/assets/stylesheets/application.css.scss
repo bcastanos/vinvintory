@@ -30,12 +30,29 @@
   font-size: 36px;
 }
 
+.opaque-bg {
+   background-color: rgba(245, 245, 245, 0.4);
+}
+
  body {
    padding-top: 50px;
    font-family: 'Merriweather', serif;
  }
 
- html {
+ .nopadding {
+   padding: 0 !important;
+   margin: 0 !important;
+}
+
+.bgwhite{
+  background-color: white;
+}
+
+.bggray{
+  background-color: gray;
+}
+
+.background-style {
 background: url(http://i.imgur.com/emxeIbg.jpg) no-repeat center center fixed;
 -webkit-background-size: cover;
 -moz-background-size: cover;
