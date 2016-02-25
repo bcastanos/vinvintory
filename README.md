@@ -1,6 +1,6 @@
 #vInventory
 
-[vInventory on Heroku](https://http://vinventory.herokuapp.com)
+[vInventory on Heroku](https://vinventory.herokuapp.com)
 
 ---
 

@@ -18,8 +18,10 @@
       <th><%= sort_link "vintage" %></th>
       <th><%= sort_link "wine" %></th>
       <th><%= sort_link "price" %></th>
+      <th><%= sort_link "value" %></th>
       <th>Photo</th>
-      <th></th>
+      <th>Edit</th>
+      <th>Delete</th>
     </tr>
   </thead>
   <tbody>
@@ -29,7 +31,9 @@
         <td><%= bottle.vintage %></td>
         <td><%= bottle.wine %></td>
         <td><%= number_to_currency bottle.price %></td>
+        <td><%= number_to_currency bottle.price * bottle.qty %></td>
         <td></td>
+        <td><%= link_to "E", edit_bottle_path(bottle) %></td>
         <td><%= link_to "D", bottle, method: :delete,
                                        data: { confirm: "You sure?" } %></td>
       </tr>

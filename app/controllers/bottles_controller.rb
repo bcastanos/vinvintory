@@ -26,18 +26,18 @@ class BottlesController < ApplicationController
     end
   end
 
-  # def edit
-  #   @bottle = Bottle.find(params[:id])
-  # end
+  def edit
+    @bottle = Bottle.find(params[:id])
+  end
   #
-  # def update
-  #   @bottle = Bottle.find(params[:id])
-  #   if Bottle.update_attributes(params.require(:bottle).permit(:qty, :vintage, :wine, :price))
-  #     redirect_to users_path
-  #   else
-  #     render :edit
-  #   end
-  # end
+  def update
+    @bottle = Bottle.find(params[:id])
+    if @bottle.update(bottles_params)
+      redirect_to users_path
+    else
+      render :edit
+    end
+  end
 
   def destroy
     @bottle.destroy
@@ -48,7 +48,7 @@ class BottlesController < ApplicationController
   private
 
   def bottles_params
-    params.require(:bottle).permit(:qty, :vintage, :wine, :price)
+    params.require(:bottle).permit(:qty, :vintage, :wine, :price, :id)
   end
 
   def correct_user

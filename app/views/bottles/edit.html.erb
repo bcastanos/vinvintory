@@ -1,2 +1,29 @@
-<h1>Bottles#edit</h1>
-<p>Find me in app/views/bottles/edit.html.erb</p>
+<h1>EDIT BOTTLE</h1>
+
+<%= form_for @bottle do |f| %>
+
+<div>
+  <%= f.label :qty %>
+  <%= f.number_field :qty %>
+</div>
+
+<div>
+  <%= f.label :vintage %>
+  <%= f.number_field :vintage %>
+</div>
+
+<div>
+  <%= f.label :wine %>
+  <%= f.text_field :wine %>
+</div>
+
+<div>
+  <%= f.label :price %>
+  <%= f.number_field :price %>
+</div>
+
+<%= f.submit 'UPDATE' %>
+
+<% end %>
+
+<%= link_to 'BACK TO YOUR CELLAR', users_path %>
