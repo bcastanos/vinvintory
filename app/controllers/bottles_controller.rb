@@ -1,6 +1,7 @@
 class BottlesController < ApplicationController
 
   before_action :logged_in_user, only: [:create, :destroy]
+  before_action :correct_user, only: :destroy
   # helper_method :sort_column, :sort_direction
 
   # def index
@@ -19,9 +20,9 @@ class BottlesController < ApplicationController
     @bottle = current_user.bottles.build(bottles_params)
     if @bottle.save
       flash[:success] = "Added to your cellar."
-      redirect_to root_url
+      redirect_to user_path(current_user)
     else
-      redirect_to user_path
+      render 'new'
     end
   end
 
@@ -39,9 +40,9 @@ class BottlesController < ApplicationController
   # end
 
   def destroy
-    @bottle = Bottle.find(params[:id])
     @bottle.destroy
-    redirect_to user_path(@user)
+    flash[:success] = "Entry deleted"
+    redirect_to user_path(current_user)
   end
 
   private
@@ -49,6 +50,12 @@ class BottlesController < ApplicationController
   def bottles_params
     params.require(:bottle).permit(:qty, :vintage, :wine, :price)
   end
+
+  def correct_user
+      @bottle = current_user.bottles.find_by(id: params[:id])
+      redirect_to user_path(current_user) if @bottle.nil?
+      flash[:danger] = "Not your bottle!"
+    end
 
   # def sortable_columns
   #   ["qty", "vintage", "wine", "price"]
