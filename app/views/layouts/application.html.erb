@@ -16,7 +16,7 @@
           <% flash.each do |message_type, message| %>
         <div class="alert alert-<%= message_type %>"><%= message %></div>
       <% end %>
-      <script>$('.alert').delay(2000).slideUp()</script>
+        <script>$('.alert').delay(2000).slideUp()</script>
 
   <%= yield %>
 </div>
