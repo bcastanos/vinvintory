@@ -22,13 +22,8 @@
   <%= f.number_field :price %>
 </div>
 
-<div>
-  <%= f.label "Add Image" %>
-  <%= f.file_field :avatar %>
-</div><br>
-
-<%= f.submit 'ADD TO YOUR CELLAR' %>
+<%= f.submit 'Add Wine' %>
 
 <% end %>
 
-<%= link_to 'BACK TO YOUR CELLAR', users_path %>
+<%= link_to 'Back to Cellar', user_path(current_user) %>

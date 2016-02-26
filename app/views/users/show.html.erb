@@ -11,20 +11,18 @@
           <th><%= sort_link "wine" %></th>
           <th><%= sort_link "price" %></th>
           <th><%= sort_link "value" %></th>
-          <th>Photo</th>
           <th>Edit</th>
           <th>Delete</th>
         </tr>
       </thead>
     <tbody class="bgwhite">
-    <% @bottles.each do |bottle| %>
+    <% @cellar.each do |bottle| %>
         <tr>
           <td><%= bottle.qty %></td>
           <td><%= bottle.vintage %></td>
           <td><%= bottle.wine %></td>
           <td><%= number_to_currency bottle.price %></td>
           <td><%= number_to_currency bottle.price * bottle.qty %></td>
-          <td><%= bottle.avatar %></td>
           <td><%= link_to "Edit", edit_bottle_path(bottle) %></td>
           <td><%= link_to "Delete", bottle, method: :delete, data: {confirm: "You sure?" }%></td>
         </tr>
@@ -32,5 +30,5 @@
     </tbody>
   </table>
 
-      <button class= "btn btn-success center-block"><%= link_to "NEW BOTTLE", new_bottle_path %></button>
+      <%= link_to 'Add Wine', new_bottle_path, :class => "btn btn-success" %>
   </div>

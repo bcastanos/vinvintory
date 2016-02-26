@@ -1,15 +1,18 @@
-<!-- <h1>Users</h1>
+<h1>Users</h1>
 
-  <% @users.each do |u| %>
-  <%= link_to "#{u.name}", user_path(u.id) %><br>
-  <%= u.email %>
-<% end %> -->
-
-<% provide(:title, 'All users') %>
-<h1>All users</h1>
-
-<ul class="users">
-    <li>
-      <%= render @users %>
-    </li>
-</ul>
+<table class="table table-bordered table-hover">
+  <thead class="bgwhite">
+    <tr>
+      <th><%= sort_link "Name" %></th>
+      <th><%= sort_link "Email" %></th>
+    </tr>
+  </thead>
+<tbody class="bgwhite">
+<% @users.each do |u| %>
+    <tr>
+      <td><%= link_to "#{u.name}", user_path(u.id) %></td>
+      <td><%= u.email %></td>
+    </tr>
+  <% end %>
+</tbody>
+</table>

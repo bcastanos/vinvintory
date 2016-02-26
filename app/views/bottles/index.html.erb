@@ -9,12 +9,12 @@
     </tr>
   </thead>
   <tbody>
-    <% @bottles.each do |bottle| %>
+    <% @cellar.each do |cellar| %>
       <tr>
-        <td><%= bottle.qty %></td>
-        <td><%= bottle.vintage %></td>
-        <td><%= bottle.wine %></td>
-        <td><%= number_to_currency bottle.price %></td>
+        <td><%= cellar.qty %></td>
+        <td><%= cellar.vintage %></td>
+        <td><%= cellar.wine %></td>
+        <td><%= number_to_currency cellar.price %></td>
       </tr>
     <% end %>
   </tbody>
