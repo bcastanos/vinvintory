@@ -19,8 +19,9 @@ Vinventory is a web app designed to allow users to  manage their wine collection
 ##Technologies Used
 - Ruby on Rails
 - PostgreSQL
-- jquery
+- jQuery
 - Bootstrap
+- HTML/CSS
 
 ##User Stories
 
@@ -33,6 +34,8 @@ Vinventory is a web app designed to allow users to  manage their wine collection
 |User|Login to my account to see my inventory.|
 |User|Be able to sort my inventory.|
 |User|Be able to export my inventory onto excel.|
+|User|Be able to import an inventory.|
+|Admin|Be able to delete users.|
 
 ##Installation
 
