@@ -42,3 +42,5 @@ Just login and start using!
 ##Unsolved Problems
 
 - Pictures can take up a lot of space in the table so I would have liked to have potential uploads and then hover over an icon that creates a tooltip show of the image.
+
+- I would like to be able to upload and download csv files to auto-populate your online inventory or pull a copy of your inventory into excel, respectively.
