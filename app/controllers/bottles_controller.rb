@@ -4,17 +4,9 @@ class BottlesController < ApplicationController
   before_action :correct_user, only: [:edit, :destroy]
   helper_method :sort_column, :sort_direction
 
-  # def index
-  #   @bottles = Bottle.order("#{sort_column} #{sort_direction}")
-  # end
-  #
   def new
     @bottle = current_user.bottles.build if logged_in?
   end
-  #
-  # def show
-  #   @bottle = Bottle.find(params[:id])
-  # end
 
   def create
     @bottle = current_user.bottles.build(bottles_params)
@@ -29,7 +21,7 @@ class BottlesController < ApplicationController
   def edit
     @bottle = Bottle.find(params[:id])
   end
-  #
+
   def update
     @bottle = Bottle.find(params[:id])
     if @bottle.update(bottles_params)
@@ -47,15 +39,17 @@ class BottlesController < ApplicationController
 
   private
 
-  def bottles_params
-    params.require(:bottle).permit(:qty, :vintage, :wine, :price, :id, :avatar, :name)
-  end
+    def bottles_params
+      params.require(:bottle).permit(:qty, :vintage, :wine, :price, :id, :avatar, :name)
+    end
 
-  def correct_user
+    def correct_user
       @bottle = current_user.bottles.find_by(id: params[:id])
       redirect_to user_path(current_user) if @bottle.nil?
-      flash[:danger] = "Not your bottle!" if @bottle.nil?
+      flash[:danger] = "Not your wine!" if @bottle.nil?
     end
+
+    #Column Sorting
 
     def sortable_columns
       ["qty", "vintage", "wine", "price"]

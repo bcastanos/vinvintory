@@ -10,6 +10,7 @@ class UsersController < ApplicationController
   end
 
   def show
+    @users = User.all
     @user = User.find(params[:id])
     @cellar = User.find(params[:id]).bottles.all && User.find(params[:id]).bottles.order("#{sort_column} #{sort_direction}")
   end
