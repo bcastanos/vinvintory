@@ -1,5 +1,7 @@
 <h1 class="text-center">Add Wine</h1>
 
+<div class="container center_div">
+
 <%= form_for @bottle do |f| %>
 
 <div>
@@ -21,8 +23,9 @@
   <%= f.label :price %>
   <%= f.number_field :price %>
 </div>
-<%= f.submit 'Add Wine' %>
+<%= f.submit 'Add Wine', :class => "btn btn-success" %>
 
 <% end %>
 
-<%= link_to 'Back to Cellar', user_path(current_user) %>
+<%= link_to 'Back to my cellar', user_path(current_user), :class => "btn btn-default center-block" %>
+</div>
