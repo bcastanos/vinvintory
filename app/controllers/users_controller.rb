@@ -11,8 +11,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @bottles = Bottle.order("#{sort_column} #{sort_direction}")
-    @cellar = User.find(params[:id]).bottles.all
+    @cellar = User.find(params[:id]).bottles.all && User.find(params[:id]).bottles.order("#{sort_column} #{sort_direction}")
   end
 
   def new

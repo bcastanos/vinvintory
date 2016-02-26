@@ -2,7 +2,7 @@ class BottlesController < ApplicationController
 
   before_action :logged_in_user, only: [:create, :destroy]
   before_action :correct_user, only: :destroy
-  # helper_method :sort_column, :sort_direction
+  helper_method :sort_column, :sort_direction
 
   # def index
   #   @bottles = Bottle.order("#{sort_column} #{sort_direction}")
@@ -57,16 +57,16 @@ class BottlesController < ApplicationController
       flash[:danger] = "Not your bottle!"
     end
 
-  # def sortable_columns
-  #   ["qty", "vintage", "wine", "price"]
-  # end
+    def sortable_columns
+      ["qty", "vintage", "wine", "price"]
+    end
 
-  # def sort_column
-  #   sortable_columns.include?(params[:column]) ? params[:column] : "wine"
-  # end
-  #
-  # def sort_direction
-  #   %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
-  # end
+    def sort_column
+      sortable_columns.include?(params[:column]) ? params[:column] : "wine"
+    end
+
+    def sort_direction
+      %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
+    end
 
 end
