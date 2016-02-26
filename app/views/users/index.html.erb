@@ -5,6 +5,7 @@
     <tr>
       <th><%= sort_link "Name" %></th>
       <th><%= sort_link "Email" %></th>
+      <th><%= sort_link "Delete" %></th>
     </tr>
   </thead>
 <tbody class="bgwhite">
@@ -12,7 +13,10 @@
     <tr>
       <td><%= link_to "#{u.name}", user_path(u.id) %></td>
       <td><%= u.email %></td>
+      <td><% if current_user.admin? && !current_user?(u) %>
+          <%= link_to "delete", u, method: :delete,
+                                   data: { confirm: "You sure?" } %><%end%></td>
     </tr>
-  <% end %>
+      <% end %>
 </tbody>
 </table>
