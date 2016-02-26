@@ -1,7 +1,7 @@
 class BottlesController < ApplicationController
 
   before_action :logged_in_user, only: [:create, :destroy]
-  before_action :correct_user, only: :destroy
+  before_action :correct_user, only: [:edit, :destroy]
   helper_method :sort_column, :sort_direction
 
   # def index
@@ -54,7 +54,7 @@ class BottlesController < ApplicationController
   def correct_user
       @bottle = current_user.bottles.find_by(id: params[:id])
       redirect_to user_path(current_user) if @bottle.nil?
-      flash[:danger] = "Not your bottle!"
+      flash[:danger] = "Not your bottle!" if @bottle.nil?
     end
 
     def sortable_columns

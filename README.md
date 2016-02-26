@@ -6,7 +6,6 @@
 
 Vinventory is a web app designed to allow users to  manage their wine collection online.
 
-
 ##Wireframes
 
 ![alt tag](http://imgur.com/IpmJfVz.png)
@@ -22,10 +21,6 @@ Vinventory is a web app designed to allow users to  manage their wine collection
 - PostgreSQL
 - jquery
 - Bootstrap
-
-##Approach Taken
-
-
 
 ##User Stories
 
