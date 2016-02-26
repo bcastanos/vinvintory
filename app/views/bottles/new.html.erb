@@ -1,4 +1,4 @@
-<h1>ADD A NEW BOTTLE</h1>
+<h1 class="text-center">Add Wine</h1>
 
 <%= form_for @bottle do |f| %>
 
@@ -21,7 +21,6 @@
   <%= f.label :price %>
   <%= f.number_field :price %>
 </div>
-
 <%= f.submit 'Add Wine' %>
 
 <% end %>
