@@ -31,6 +31,7 @@ Vinventory is a web app designed to allow users to  manage their wine collection
 |User|Add my entries to a form so the app could store my data.|
 |User|Have a display view so I could see my whole inventory.|
 |User|Be able to see other users' inventories.|
+|User|Be able to edit my account info/inventory listing info.|
 |User|Login to my account to see my inventory.|
 |User|Be able to sort my inventory.|
 |User|Be able to export my inventory onto excel.|
